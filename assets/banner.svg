@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Dark Tech Gradient Background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="50%" stop-color="#0e1726"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3"/>
+    </pattern>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.45; }
+      50% { transform: scale(1.15) translate(-15px, 10px); opacity: 0.75; }
+    }
+    @keyframes pulseOrb2 {
+      0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.35; }
+      50% { transform: scale(1.2) translate(20px, -15px); opacity: 0.65; }
+    }
+    @keyframes floatCard1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(7px); }
+    }
+    @keyframes blinkCursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes streamFlow {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .orb-1 { animation: pulseOrb 8s ease-in-out infinite; transform-origin: 200px 100px; }
+    .orb-2 { animation: pulseOrb2 10s ease-in-out infinite; transform-origin: 1000px 250px; }
+    .float-1 { animation: floatCard1 6s ease-in-out infinite; }
+    .float-2 { animation: floatCard2 7s ease-in-out infinite; }
+    .cursor { animation: blinkCursor 1s infinite; }
+    .stream-line { stroke-dasharray: 8 6; animation: streamFlow 4s linear infinite; }
+    .terminal-font { font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace; }
+    .sans-font { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+
+  <!-- Dynamic Animated Ambient Orbs in Background -->
+  <circle class="orb-1" cx="220" cy="90" r="140" fill="#6366f1" filter="url(#neonBlur)"/>
+  <circle class="orb-2" cx="980" cy="240" r="160" fill="#ec4899" filter="url(#neonBlur)"/>
+  <circle class="orb-1" cx="620" cy="300" r="100" fill="#06b6d4" filter="url(#neonBlur)" opacity="0.25"/>
+
+  <!-- Dynamic Streaming Path (Circuit / Agent Flow) behind content -->
+  <path class="stream-line" d="M 50 180 Q 300 60 600 180 T 1150 180" fill="none" stroke="#6366f1" stroke-width="1.8" opacity="0.4"/>
+  <path class="stream-line" d="M 50 200 Q 350 320 650 200 T 1150 200" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- Left Dynamic TUI Terminal Window Widget -->
+  <g class="float-1" transform="translate(60, 65)">
+    <!-- Terminal Box -->
+    <rect width="250" height="230" rx="12" fill="url(#cardBg)" stroke="#334155" stroke-width="1.5" filter="url(#subtleGlow)"/>
+    <!-- Terminal Header Bar -->
+    <rect width="250" height="30" rx="12" fill="#1e293b"/>
+    <circle cx="18" cy="15" r="4.5" fill="#ef4444"/>
+    <circle cx="33" cy="15" r="4.5" fill="#f59e0b"/>
+    <circle cx="48" cy="15" r="4.5" fill="#10b981"/>
+    <text x="135" y="19" fill="#94a3b8" font-size="11" class="terminal-font" text-anchor="middle">zsh: ai-coding-agent</text>
+    <!-- Terminal Code / Command Lines -->
+    <text x="16" y="55" fill="#10b981" font-size="12" class="terminal-font">❯ <tspan fill="#f1f5f9">opencode run</tspan></text>
+    <text x="16" y="78" fill="#64748b" font-size="11" class="terminal-font">⚡ Indexing workspace...</text>
+    <text x="16" y="100" fill="#38bdf8" font-size="11" class="terminal-font">✔ 124 files mapped (LSP)</text>
+    <text x="16" y="122" fill="#a855f7" font-size="11" class="terminal-font">🤖 Autonomous loop:</text>
+    <text x="24" y="144" fill="#cbd5e1" font-size="11" class="terminal-font">→ Running test suite</text>
+    <text x="24" y="166" fill="#10b981" font-size="11" class="terminal-font">✓ Tests passed (28/28)</text>
+    <text x="24" y="188" fill="#f43f5e" font-size="11" class="terminal-font">⚡ Auto-committing git</text>
+    <text x="16" y="212" fill="#10b981" font-size="12" class="terminal-font">❯ <tspan class="cursor" fill="#38bdf8">▋</tspan></text>
+  </g>
+
+  <!-- Right Dynamic Telemetry / Agent Execution Box -->
+  <g class="float-2" transform="translate(890, 65)">
+    <rect width="250" height="230" rx="12" fill="url(#cardBg)" stroke="#334155" stroke-width="1.5" filter="url(#subtleGlow)"/>
+    <rect width="250" height="30" rx="12" fill="#1e293b"/>
+    <circle cx="18" cy="15" r="4.5" fill="#64748b"/>
+    <circle cx="33" cy="15" r="4.5" fill="#64748b"/>
+    <circle cx="48" cy="15" r="4.5" fill="#64748b"/>
+    <text x="135" y="19" fill="#94a3b8" font-size="11" class="terminal-font" text-anchor="middle">MCP Tool Pipeline</text>
+    <!-- Pipeline Items -->
+    <rect x="16" y="45" width="218" height="32" rx="6" fill="#0f172a" stroke="#6366f1" stroke-width="1"/>
+    <text x="26" y="66" fill="#c7d2fe" font-size="11" class="terminal-font">🗂 FileSystem MCP [Ready]</text>
+    
+    <rect x="16" y="87" width="218" height="32" rx="6" fill="#0f172a" stroke="#06b6d4" stroke-width="1"/>
+    <text x="26" y="108" fill="#a5f3fc" font-size="11" class="terminal-font">🐚 Sandboxed Bash [Active]</text>
+
+    <rect x="16" y="129" width="218" height="32" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+    <text x="26" y="150" fill="#a7f3d0" font-size="11" class="terminal-font">☸ KubeGPT / SRE [Online]</text>
+
+    <rect x="16" y="171" width="218" height="32" rx="6" fill="#0f172a" stroke="#ec4899" stroke-width="1"/>
+    <text x="26" y="192" fill="#fbcfe8" font-size="11" class="terminal-font">🧠 Local LLM: Ollama Offline</text>
+  </g>
+
+  <!-- FOREGROUND Center: Title & Subtitle prominently displayed -->
+  <!-- Top Category Tag Pill -->
+  <g transform="translate(600, 52)">
+    <rect x="-140" y="-14" width="280" height="28" rx="14" fill="#1e293b" stroke="url(#primaryGlow)" stroke-width="1.2"/>
+    <text x="0" y="4.5" fill="#e2e8f0" font-size="11" font-weight="600" class="sans-font" text-anchor="middle" letter-spacing="1">⚡ NEXT-GEN COMMAND-LINE STACK</text>
+  </g>
+
+  <!-- Main Headline Title -->
+  <text x="600" y="118" fill="#ffffff" font-size="34" font-weight="800" class="sans-font" text-anchor="middle" letter-spacing="-0.5">
+    Awesome AI-Powered
+  </text>
+  <text x="600" y="160" fill="url(#primaryGlow)" font-size="36" font-weight="900" class="sans-font" text-anchor="middle" letter-spacing="-0.5">
+    Terminal &amp; Developer CLI
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="200" fill="#94a3b8" font-size="14.5" font-weight="400" class="sans-font" text-anchor="middle">
+    Autonomous Coding Agents • Intelligent Shells • Terminal Emulators • DevOps Copilots
+  </text>
+
+  <!-- Interactive Feature Pills in Foreground -->
+  <g transform="translate(600, 248)">
+    <!-- Pill 1 -->
+    <rect x="-240" y="-14" width="105" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+    <text x="-187" y="4" fill="#38bdf8" font-size="11.5" font-weight="500" class="sans-font" text-anchor="middle">🤖 AI Agents</text>
+
+    <!-- Pill 2 -->
+    <rect x="-122" y="-14" width="112" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+    <text x="-66" y="4" fill="#a855f7" font-size="11.5" font-weight="500" class="sans-font" text-anchor="middle">💻 Native TUIs</text>
+
+    <!-- Pill 3 -->
+    <rect x="3" y="-14" width="116" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+    <text x="61" y="4" fill="#34d399" font-size="11.5" font-weight="500" class="sans-font" text-anchor="middle">🔌 MCP Ready</text>
+
+    <!-- Pill 4 -->
+    <rect x="132" y="-14" width="108" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+    <text x="186" y="4" fill="#f43f5e" font-size="11.5" font-weight="500" class="sans-font" text-anchor="middle">🛡 Local LLMs</text>
+  </g>
+
+  <!-- Bottom Stats Bar in Center -->
+  <text x="600" y="305" fill="#64748b" font-size="12" class="terminal-font" text-anchor="middle">
+    ✦ Open-Source &amp; SaaS Landscape ✦ Star-Ranked ✦ Multi-Model ✦
+  </text>
+</svg>
