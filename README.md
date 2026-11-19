@@ -65,7 +65,7 @@ The global AI-assisted developer tools and intelligent terminal ecosystem is est
 
 ## ⭐ Open-Source GitHub Projects
 
-The open-source terminal AI ecosystem ranked strictly by GitHub stars in descending order:
+The open-source terminal AI ecosystem ranked strictly by GitHub_Stars in descending order:
 
 ### Terminal Coding Agents & Harnesses
 
@@ -164,7 +164,7 @@ We welcome additions, corrections, and updates from the developer community!
 2. Create a feature branch: `git checkout -b feature/add-new-tool`
 3. Add your tool to the appropriate section:
    - For **SaaS**: Ensure exact pricing and free tier/trial limits are included in tabular format.
-   - For **Open-Source**: Ensure repository includes a `style=social&color=white` star badge linking to `/stargazers`, and list items in star-sorted order.
+   - For **Open-Source**: Ensure repository includes a `style=social&color=white` Stars_Badge linking to `/stargazers`, and list items in star-sorted order.
 4. Commit your changes: `git commit -m "Add new terminal tool: <name>"`
 5. Push to the branch: `git push origin feature/add-new-tool`
 6. Open a Pull Request with a clear description of the project.
